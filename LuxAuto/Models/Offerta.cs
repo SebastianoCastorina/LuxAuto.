@@ -11,10 +11,10 @@ namespace LuxAuto.Models
     {
         [Key]
         public int idOfferta { get; set; }
-
+        [Display(Name = "Offerta Fatta")]
         [Column(TypeName = "money")]
         public decimal? OffertaFatta { get; set; }
-
+        [Display(Name ="Data Offerta")]
         [Column(TypeName = "datetime")]
         public DateTime? DataOfferta { get; set; }
 

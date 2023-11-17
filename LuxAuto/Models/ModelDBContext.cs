@@ -1,3 +1,4 @@
+using LuxAuto.Migrations;
 using System;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Data.Entity;
@@ -29,6 +30,8 @@ namespace LuxAuto.Models
             modelBuilder.Entity<Offerta>()
                 .Property(e => e.OffertaFatta)
                 .HasPrecision(19, 4);
+
+           
         }
     }
 }

@@ -45,18 +45,19 @@ namespace LuxAuto.Controllers
                 .ToList();
 
             ViewBag.idAuto = new SelectList(autovettureConAsta, "idAuto", "NomeModello", "PrezzoBase");
+
             return View();
         }
 
         // POST: Asta/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "UltimaOfferta, idAsta,idAuto,PrezzoBase")] Asta asta)
+        public ActionResult Create([Bind(Include = "UltimaOfferta, idAsta,idAuto,PrezzoBase,DataChiusuraAsta")] Asta asta)
         {
             if (ModelState.IsValid)
             {
-                
-                db.Asta.Add(asta);
+             
+             db.Asta.Add(asta);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }

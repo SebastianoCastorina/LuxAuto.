@@ -285,6 +285,7 @@
     <Content Include="Content\assets\img\LoghiMarchi\Rolls-Royce-logo-2048x2048.png" />
     <Content Include="Content\assets\img\logo3.PNG" />
     <Content Include="Content\assets\img\prossimamente.jpg" />
+    <Content Include="Content\assets\video\carfiltratevideo.mp4" />
     <Content Include="Content\assets\video\homebackvideo.MP4" />
     <Content Include="Content\bootstrap-grid.css" />
     <Content Include="Content\bootstrap-grid.min.css" />

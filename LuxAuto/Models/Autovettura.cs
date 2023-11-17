@@ -47,9 +47,9 @@ namespace LuxAuto.Models
         public string SpecificheTecniche { get; set; }
         [Display(Name = "Marchio")]
         public int? idMarchio { get; set; }
-        
+        [Display(Name = "Auto all'asta")]
         public bool? HasAsta { get; set; }
-        
+        [Display(Name = "Auto d'epoca")]
         public bool? HasEpoca { get; set; }
 
         public string Foto1 { get; set; }
@@ -63,7 +63,7 @@ namespace LuxAuto.Models
         public string Foto5 { get; set; }
 
         public string Foto6 { get; set; }
-        
+        [Display(Name = "Venduta")]
         public bool? HasVenduta { get; set; }
 
         public List<string> CaroselloImages { get; set; }

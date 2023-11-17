@@ -8,6 +8,7 @@ using System.Web;
 using System.Web.Helpers;
 using System.Web.Mvc;
 using LuxAuto.Models;
+using Microsoft.Ajax.Utilities;
 
 namespace LuxAuto.Controllers
 {
@@ -61,7 +62,8 @@ namespace LuxAuto.Controllers
         {
 
             //GET USER ID
-
+            
+            
             User user = db.User.Where(u=>u.Username == User.Identity.Name).FirstOrDefault();
             if (ModelState.IsValid)
             {
@@ -82,8 +84,10 @@ namespace LuxAuto.Controllers
                 return RedirectToAction("Index", "Asta");
             }
             return View("Index","Asta");
+            }
+         
             // ... (gestione degli errori)
-        }
+       
 
       
 

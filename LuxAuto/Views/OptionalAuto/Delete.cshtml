@@ -1,0 +1,34 @@
+﻿@model LuxAuto.Models.OptionalAuto
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<div>
+    <h4>OptionalAuto</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Optional.NomeOptional)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Optional.NomeOptional)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.idAuto)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.idAuto)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.idOptInAuto }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

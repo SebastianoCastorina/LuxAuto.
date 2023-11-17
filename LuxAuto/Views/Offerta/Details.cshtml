@@ -1,0 +1,58 @@
+﻿@model LuxAuto.Models.Offerta
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Offerta</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Asta.idAsta)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Asta.idAsta)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Autovettura.NomeModello)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Autovettura.NomeModello)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.User.Nome)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.User.Nome)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.OffertaFatta)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.OffertaFatta)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DataOfferta)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DataOfferta)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.idOfferta }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

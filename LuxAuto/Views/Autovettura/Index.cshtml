@@ -1,0 +1,297 @@
+﻿@model IEnumerable<LuxAuto.Models.Autovettura>
+
+<head>
+    <meta name="viewport" content="width=device-width" />
+
+    <title>Le Nostre Meraviglie</title>
+    @Scripts.Render("~/Scripts/JSm.js")
+    <link href="~/Content/assets/cssview/ListaAuto.css" rel="stylesheet" />
+    <link href="~/Content/Site.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    @Styles.Render("~/Content/Site.css")
+
+
+
+
+
+</head>
+
+
+
+@{
+
+    ViewBag.Title = "Index";
+}
+
+
+
+<div class="container-fluid">
+    <h2>Le Nostre Meraviglie</h2>
+
+
+    <div class="container-fluid  justify-content-between">
+        @if (User.IsInRole("Admin"))
+        {
+
+            @Html.ActionLink("Aggiungi Auto", "Create", "Autovettura", FormMethod.Post, new { @enctype = "multipart/form-data", @class = " btn btn-success text-center mw-10 justify-content-between  align-items-center mt-5 " })
+
+        }
+        <form action="/Autovettura/FilterByMarchio" method="post">
+            <label for="selectedMarchio">Seleziona un marchio:</label>
+            @Html.DropDownList("selectedMarchio", ViewData["selectedMarchio"] as SelectList, "Seleziona un marchio", new { @class = "form-control" })
+            <input type="submit" value="Cerca" class="btn btn-primary mt-2">
+        </form>
+
+
+
+        @foreach (var item in Model)
+        {
+            if (User.IsInRole("Admin"))
+            {
+
+
+                <div class="card mb-3 bg-black text-white ">
+                    <div class="row">
+                        <div class="col-lg-4 col-md-6 col-sm-12 text-center" id="colonna1">
+                            <h5 class="card-title mb-4">@Html.DisplayFor(modelItem => item.Marchio.NomeMarchio)</h5>
+                            <div id="carousel-@item.idAuto" class="carousel slide">
+
+                                <!-- Indicators --><div class=" container-fluid mx-auto">
+                                    <ol class="carousel-indicators mx-auto">
+                                        <li data-bs-target="#carousel-@item.idAuto" data-bs-slide-to="0" class="d-block carousel-slide carousel-image mx-auto active" alt="Image 1"></li>
+                                        <li data-bs-target="#carousel-@item.idAuto" data-bs-slide-to="1" class="d-block carousel-slide carousel-image mx-auto" alt="Image 2"></li>
+                                        <li data-bs-target="#carousel-@item.idAuto" data-bs-slide-to="2" class="d-block  carousel-slide carousel-image mx-auto" alt="Image 3"></li>
+                                        <li data-bs-target="#carousel-@item.idAuto" data-bs-slide-to="3" class="d-block  carousel-slide carousel-image mx-auto" alt="Image 4"></li>
+                                        <li data-bs-target="#carousel-@item.idAuto" data-bs-slide-to="4" class="d-block   carousel-slide carousel-image mx-auto" alt="Image 5"></li>
+                                        <li data-bs-target="#carousel-@item.idAuto" data-bs-slide-to="5" class="d-block  carousel-slide carousel-image mx-auto" alt="Image 6"></li>
+                                        <li data-bs-target="#carousel-@item.idAuto" data-bs-slide-to="6" class="d-block  carousel-slide carousel-image mx-auto" alt="Image 7"></li>
+                                      
+                                        <!-- Add more indicators for additional images -->
+                                    </ol>
+                                    <!-- Slides -->
+                                    <div class="carousel-inner ">
+                                        <div class="carousel-item active">
+                                            <a href="~/Content/assets/img/@item.Foto" class="carousel-link text-decoration-none text-black" onclick="openFullScreen('@item.Foto')">
+                                                content
+                                                <img src="~/Content/assets/img/@item.Foto" class="d-block img-fluid mx-auto " alt="Image 1" style="width:90% !important; max-height:45% !important; min-height:45% !important; object-fit: contain; margin: auto;">
+                                            </a>
+                                        </div>
+                                        <div class="carousel-item ">
+                                            <a href="~/Content/assets/img/@item.Foto1" class="carousel-link text-decoration-none text-black" onclick="openFullScreen('@item.Foto1')">
+                                                <img src="~/Content/assets/img/@item.Foto1" class="d-block img-fluid  mx-auto" alt="Image 2" style="width:90% !important; max-height:45% !important; min-height:45% !important; object-fit: contain; margin: auto;">
+                                        </div>
+                                        <div class="carousel-item">
+                                            <a href="~/Content/assets/img/@item.Foto2" class="carousel-link text-decoration-none text-black" onclick="openFullScreen('@item.Foto2')">
+                                                <img src="~/Content/assets/img/@item.Foto2" class="d-block  img-fluid mx-auto" alt="Image 3" style="width:90% !important; max-height:45% !important; min-height:45% !important; object-fit: contain; margin: auto;">
+                                            </a>
+                                                </div>
+                                        <div class="carousel-item">
+                                            <a href="~/Content/assets/img/@item.Foto3" class="carousel-link text-decoration-none text-black" onclick="openFullScreen('@item.Foto3')">
+                                                <img src="~/Content/assets/img/@item.Foto3" class="d-block img-fluid mx-auto" alt="Image 4" style="width:90% !important; max-height:45% !important; min-height:45% !important; object-fit: contain; margin: auto;">
+                                            </a>
+                                                </div>
+                                        <div class="carousel-item">
+                                            <a href="~/Content/assets/img/@item.Foto4" class="carousel-link text-decoration-none text-black" onclick="openFullScreen('@item.Foto4')">
+                                                <img src="~/Content/assets/img/@item.Foto4" class="d-block img-fluid mx-auto" alt="Image 5" style="width:90% !important; max-height:45% !important; min-height:45% !important; object-fit: contain; margin: auto;">
+                                            </a>
+                                                </div>
+                                        <div class="carousel-item">
+                                            <a href="~/Content/assets/img/@item.Foto5" class="carousel-link text-decoration-none text-black" onclick="openFullScreen('@item.Foto5')">
+                                                <img src="~/Content/assets/img/@item.Foto5" class="d-block img-fluid mx-auto" alt="Image 6" style="width:90% !important; max-height:45% !important; min-height:45% !important; object-fit: contain; margin: auto;">
+                                            </a>
+                                                </div>
+                                        <div class="carousel-item">
+                                            <a href="~/Content/assets/img/@item.Foto6" class="carousel-link text-decoration-none text-black" onclick="openFullScreen('@item.Foto6')">
+                                                <img src="~/Content/assets/img/@item.Foto6" class="d-block img-fluid mx-auto" alt="Image 7" style="width:90% !important; max-height:45% !important; min-height:45% !important; object-fit: contain; margin: auto;">
+                                            </a>
+                                                </div>
+                                        <!-- Add more carousel items for additional images -->
+                                    </div>
+                                    <!-- Controls -->
+                                    <a class="carousel-control-prev mx-auto" href="#carousel-@item.idAuto" role="button" data-bs-slide="prev">
+                                        <span class="carousel-control-prev-icon mx-auto" aria-hidden="true"></span>
+                                        <span class="visually-hidden">Previous</span>
+                                    </a>
+                                    <a class="carousel-control-next mx-auto" href="#carousel-@item.idAuto" role="button" data-bs-slide="next">
+                                        <span class="carousel-control-next-icon mx-auto" aria-hidden="true"></span>
+                                        <span class="visually-hidden mx-auto">Next</span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-8 col-md-6 col-sm-12 conta text-white" id="colonna2">
+                            <div class="card-body">
+                                <h5 class="card-title mb-4 d-inline">@Html.DisplayFor(modelItem => item.NomeModello)</h5>
+                                <div class="compact-text">
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <ul class="list-unstyled">
+                                                <li class="fw-bold fs-5 mt-2 mb-2 ">Lista Optional:</li>
+                                                @foreach (var i in item.OptionalAuto)
+                                                {
+                                                    <li>@i.Optional.NomeOptional</li>
+                                                }
+                                            </ul>
+                                        </div>
+                                        <div class="col col-md-6 ">
+                                            <ul class="list-unstyled">
+
+                                                <li class="fw-bold fs-5">@Html.DisplayNameFor(model => model.DatiBase):<br /> <span class="fs-6 fw-normal"> @Html.DisplayFor(modelItem => item.DatiBase)</span> </li>
+                                                <li class="fw-bold fs-5"><i class="me-2 fas fa-road  fa-xs" style="color: #ffffff;"></i> @Html.DisplayNameFor(model => model.Chilometraggio):<br /> <span class="fs-6 fw-normal">@Html.DisplayFor(modelItem => item.Chilometraggio)</span></li>
+                                                <li class="fw-bold fs-5"><i class=" me-2 fas fa-tachometer-alt  fa-xs" style="color: #ffffff;"></i>@Html.DisplayNameFor(model => model.Potenza):<br /><span class="fs-6 fw-normal"> @Html.DisplayFor(modelItem => item.Potenza)</span></li>
+                                                <li class="fw-bold fs-5"><i class="me-2 fas fa-map-marker-alt  fa-xs" style="color: #ffffff;"></i>@Html.DisplayNameFor(model => model.Città):<br /><span class="fs-6 fw-normal"> @Html.DisplayFor(modelItem => item.Città)</span></li>
+                                                <li class="fw-bold fs-5"><i class="me-2 far fa-calendar-alt  fa-xs" style="color: #ffffff;"></i>@Html.DisplayNameFor(model => model.AnnoImmatricolazione):<br /><span class="fs-6 fw-normal"> @Html.DisplayFor(modelItem => item.AnnoImmatricolazione)</span></li>
+                                                <li class="fw-bold fs-5"><i class="me-2 fas fa-palette  fa-xs" style="color: #ffffff;"></i>@Html.DisplayNameFor(model => model.Colore):<br /><span class="fs-6 fw-normal"> @Html.DisplayFor(modelItem => item.Colore)</span></li>
+                                                <li class="fw-bold fs-5"><i class="me-2 fas fa-gas-pump  fa-xs" style="color: #ffffff;"></i>@Html.DisplayNameFor(model => model.Carburante): <br /><span class="fs-6 fw-normal">@Html.DisplayFor(modelItem => item.Carburante)</span></li>
+                                                <li class="fw-bold fs-5"><i class="me-2 fa-solid fa-file-circle-plus  fa-xs" style="color: #ffffff;"></i>@Html.DisplayNameFor(model => model.SpecificheTecniche):<br /><span class="fs-6 fw-normal"> @Html.DisplayFor(modelItem => item.SpecificheTecniche)</span></li>
+                                                <li class="fw-bold fs-5"><i class="fa-solid fa-euro-sign fa-xs" style="color: #ffffff;"></i>@Html.DisplayNameFor(model => model.Prezzo):<br /> <span class="fs-6 fw-normal">€ @Html.DisplayFor(modelItem => item.Prezzo)</span></li>
+                                                @if (item.HasVenduta == true)
+                                                {
+                                                    <li class="fw-bold fs-5">@Html.DisplayNameFor(model => model.HasVenduta):  @Html.DisplayTextFor(modelItem => item.HasVenduta)</li>
+                                                 
+                                                }
+                                                else if (item.HasAsta == true)
+                    {
+                                            <li class="fw-bold fs-5">@Html.DisplayNameFor(model => model.HasAsta):  @Html.DisplayTextFor(modelItem => item.HasAsta)</li>
+                    }
+
+
+
+                                            </ul>
+
+                                            @Html.ActionLink("Dettagli", "Details", new { id = item.idAuto }, new { @class = "btn btn-primary m-2" })
+                                            @Html.ActionLink("Modifica", "Edit", new { id = item.idAuto }, new { @class = "btn btn-secondary m-2" })
+                                            @Html.ActionLink("Elimina", "Delete", new { id = item.idAuto }, new { @class = "btn btn-danger m-2" })
+                                            @Html.ActionLink("Aggiungi Optional", "Create", "OptionalAuto", new { id = item.idAuto }, new { @class = "btn btn-warning m-2" })
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            }
+            else if (User.IsInRole("User") && item.HasVenduta != true && item.HasAsta != true )
+            {
+
+
+
+
+                <div class="card mb-3 bg-black text-white ">
+                    <div class="row">
+                        <div class="col-lg-4 col-md-6 col-sm-12 text-center" id="colonna1">
+                            <h5 class="card-title mb-4">@Html.DisplayFor(modelItem => item.Marchio.NomeMarchio)</h5>
+                            <div id="carousel-@item.idAuto" class="carousel slide">
+
+                                <!-- Indicators --><div class=" container-fluid mx-auto">
+                                    <ol class="carousel-indicators mx-auto">
+                                        <li data-bs-target="#carousel-@item.idAuto" data-bs-slide-to="0" class="d-block carousel-slide carousel-image mx-auto active" alt="Image 1"></li>
+                                        <li data-bs-target="#carousel-@item.idAuto" data-bs-slide-to="1" class="d-block carousel-slide carousel-image mx-auto" alt="Image 2"></li>
+                                        <li data-bs-target="#carousel-@item.idAuto" data-bs-slide-to="2" class="d-block  carousel-slide carousel-image mx-auto" alt="Image 3"></li>
+                                        <li data-bs-target="#carousel-@item.idAuto" data-bs-slide-to="3" class="d-block  carousel-slide carousel-image mx-auto" alt="Image 4"></li>
+                                        <li data-bs-target="#carousel-@item.idAuto" data-bs-slide-to="4" class="d-block   carousel-slide carousel-image mx-auto" alt="Image 5"></li>
+                                        <li data-bs-target="#carousel-@item.idAuto" data-bs-slide-to="5" class="d-block  carousel-slide carousel-image mx-auto" alt="Image 6"></li>
+                                        <li data-bs-target="#carousel-@item.idAuto" data-bs-slide-to="6" class="d-block  carousel-slide carousel-image mx-auto" alt="Image 7"></li>
+
+                                        <!-- Add more indicators for additional images -->
+                                    </ol>
+                                    <!-- Slides -->
+                                    <div class="carousel-inner ">
+                                        <div class="carousel-item active">
+                                            <img src="~/Content/assets/img/@item.Foto" class="d-block img-fluid mx-auto " alt="Image 1" style="width:90% !important; max-height:45% !important; min-height:45% !important; object-fit: contain; margin: auto;">
+                                        </div>
+                                        <div class="carousel-item">
+                                            <img src="~/Content/assets/img/@item.Foto1" class="d-block img-fluid  mx-auto" alt="Image 2" style="width:90% !important; max-height:45% !important; min-height:45% !important; object-fit: contain; margin: auto;">
+                                        </div>
+                                        <div class="carousel-item">
+                                            <img src="~/Content/assets/img/@item.Foto2" class="d-block  img-fluid mx-auto" alt="Image 3" style="width:90% !important; max-height:45% !important; min-height:45% !important; object-fit: contain; margin: auto;">
+                                        </div>
+                                        <div class="carousel-item">
+                                            <img src="~/Content/assets/img/@item.Foto3" class="d-block img-fluid mx-auto" alt="Image 4" style="width:90% !important; max-height:45% !important; min-height:45% !important; object-fit: contain; margin: auto;">
+                                        </div>
+                                        <div class="carousel-item">
+                                            <img src="~/Content/assets/img/@item.Foto4" class="d-block img-fluid mx-auto" alt="Image 5" style="width:90% !important; max-height:45% !important; min-height:45% !important; object-fit: contain; margin: auto;">
+                                        </div>
+                                        <div class="carousel-item">
+                                            <img src="~/Content/assets/img/@item.Foto5" class="d-block img-fluid mx-auto" alt="Image 6" style="width:90% !important; max-height:45% !important; min-height:45% !important; object-fit: contain; margin: auto;">
+                                        </div>
+                                        <div class="carousel-item">
+                                            <img src="~/Content/assets/img/@item.Foto6" class="d-block img-fluid mx-auto" alt="Image 7" style="width:90% !important; max-height:45% !important; min-height:45% !important; object-fit: contain; margin: auto;">
+                                        </div>
+                                        <!-- Add more carousel items for additional images -->
+                                    </div>
+                                    <!-- Controls -->
+                                    <a class="carousel-control-prev mx-auto" href="#carousel-@item.idAuto" role="button" data-bs-slide="prev">
+                                        <span class="carousel-control-prev-icon mx-auto" aria-hidden="true"></span>
+                                        <span class="visually-hidden">Previous</span>
+                                    </a>
+                                    <a class="carousel-control-next mx-auto" href="#carousel-@item.idAuto" role="button" data-bs-slide="next">
+                                        <span class="carousel-control-next-icon mx-auto" aria-hidden="true"></span>
+                                        <span class="visually-hidden mx-auto">Next</span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-8 col-md-6 col-sm-12 conta text-white" id="colonna2">
+                            <div class="card-body">
+                                <h5 class="card-title mb-4 d-inline">@Html.DisplayFor(modelItem => item.NomeModello)</h5>
+                                <div class="compact-text">
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <ul class="list-unstyled">
+                                                <li class="fw-bold fs-5 mt-2 mb-2 ">Lista Optional:</li>
+                                                @foreach (var i in item.OptionalAuto)
+                                                {
+                                                    <li>@i.Optional.NomeOptional</li>
+                                                }
+                                            </ul>
+                                        </div>
+                                        <div class="col col-md-6 ">
+                                            <ul class="list-unstyled">
+
+                                                <li class="fw-bold fs-5">@Html.DisplayNameFor(model => model.DatiBase):<br /> <span class="fs-6 fw-normal"> @Html.DisplayFor(modelItem => item.DatiBase)</span> </li>
+                                                <li class="fw-bold fs-5"><i class="me-2 fas fa-road  fa-xs" style="color: #ffffff;"></i> @Html.DisplayNameFor(model => model.Chilometraggio):<br /> <span class="fs-6 fw-normal">@Html.DisplayFor(modelItem => item.Chilometraggio)</span></li>
+                                                <li class="fw-bold fs-5"><i class=" me-2 fas fa-tachometer-alt  fa-xs" style="color: #ffffff;"></i>@Html.DisplayNameFor(model => model.Potenza):<br /><span class="fs-6 fw-normal"> @Html.DisplayFor(modelItem => item.Potenza)</span></li>
+                                                <li class="fw-bold fs-5"><i class="me-2 fas fa-map-marker-alt  fa-xs" style="color: #ffffff;"></i>@Html.DisplayNameFor(model => model.Città):<br /><span class="fs-6 fw-normal"> @Html.DisplayFor(modelItem => item.Città)</span></li>
+                                                <li class="fw-bold fs-5"><i class="me-2 far fa-calendar-alt  fa-xs" style="color: #ffffff;"></i>@Html.DisplayNameFor(model => model.AnnoImmatricolazione):<br /><span class="fs-6 fw-normal"> @Html.DisplayFor(modelItem => item.AnnoImmatricolazione)</span></li>
+                                                <li class="fw-bold fs-5"><i class="me-2 fas fa-palette  fa-xs" style="color: #ffffff;"></i>@Html.DisplayNameFor(model => model.Colore):<br /><span class="fs-6 fw-normal"> @Html.DisplayFor(modelItem => item.Colore)</span></li>
+                                                <li class="fw-bold fs-5"><i class="me-2 fas fa-gas-pump  fa-xs" style="color: #ffffff;"></i>@Html.DisplayNameFor(model => model.Carburante): <br /><span class="fs-6 fw-normal">@Html.DisplayFor(modelItem => item.Carburante)</span></li>
+                                                <li class="fw-bold fs-5"><i class="me-2 fa-solid fa-file-circle-plus  fa-xs" style="color: #ffffff;"></i>@Html.DisplayNameFor(model => model.SpecificheTecniche):<br /><span class="fs-6 fw-normal"> @Html.DisplayFor(modelItem => item.SpecificheTecniche)</span></li>
+                                                <li class="fw-bold fs-5"><i class="fa-solid fa-euro-sign fa-xs" style="color: #ffffff;"></i>@Html.DisplayNameFor(model => model.Prezzo):<br /> <span class="fs-6 fw-normal">€ @Html.DisplayFor(modelItem => item.Prezzo)</span></li>
+                                            </ul>
+
+                                            @Html.ActionLink("Dettagli", "Details", new { id = item.idAuto }, new { @class = "btn btn-primary m-2" })
+
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+
+
+
+            }
+        }
+
+    </div>
+
+    </div>
+
+
+
+
+
+
+
+
+
+    @Scripts.Render("~/Scripts/JSm.js")
+  

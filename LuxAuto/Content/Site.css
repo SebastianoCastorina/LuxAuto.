@@ -1,0 +1,257 @@
+﻿
+@font-face {
+    font-family: 'lemonmilk-bold';
+    src: url('assets/fonts/lemonmilk-bold.otf') format('opentype');
+}
+@font-face {
+    font-family: 'monofonto rg';
+    src: url('file:///C:\Users\Seby\AppData\Local\Temp\Rar$DRa16180.49686\monofonto rg.otf') format('opentype');
+}
+@font-face {
+    font-family: 'coolvetica rg it';
+    src: url('file:///C:\Users\Seby\AppData\Local\Temp\Rar$DRa25096.2160\coolvetica rg it.otf') format('opentype');
+}
+@font-face {
+    font-family: 'coolvetica rg';
+    src: url('assets/fonts/coolvetica rg.otf') format('opentype');
+}
+/* Utilizza il font dichiarato nei tuoi selettori CSS */
+body {
+    font-family: 'coolvetica rg', sans-serif !important; /* Utilizza il nome specificato sopra */
+}
+
+h5{
+    font-family: 'monofonto rg', sans-serif !important;
+}
+nav{
+
+    min-width:100%;
+   margin-bottom:20rem;
+   
+
+}
+
+.table {
+    color: white;
+}
+
+
+
+body {
+    background-color: black !important;
+    min-width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    color: white !important;
+  
+}
+
+
+
+}
+/* Set padding to keep content from hitting the edges */
+.body-content {
+  
+    margin-top:250px;
+
+    width:100%;
+   
+}
+
+/* Override the default bootstrap behavior where horizontal description lists 
+   will truncate terms that are too long to fit in the left column 
+*/
+.dl-horizontal dt {
+    white-space: normal;
+}
+
+/* Set width on the form input elements since they're 100% wide by default */
+input,
+select,
+textarea {
+    max-width: 280px;
+}
+
+
+.image-detail {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.auto-image {
+    max-width: 100%;
+}
+
+.auto-info {
+    padding: 20px;
+}
+
+    .auto-info h4 {
+        font-size: 24px;
+        color: #333;
+    }
+
+
+.dl-horizontal dt {
+    font-weight: bold;
+}
+
+.dl-horizontal dd {
+    margin-left: 0;
+}
+
+.auto-actions {
+    margin-top: 20px;
+}
+
+
+.carsim {
+    width: 50%
+}
+/* Media query per schermi small (fino a 576px) */
+@media (max-width: 576px) {
+    .carsim {
+        width: 90%; /* Larghezza desiderata per schermi small */
+    }
+}
+
+/* Media query per schermi medium (da 577px a 992px) */
+@media (min-width: 577px) and (max-width: 935px) {
+    .carsim {
+        width: 90%; /* Larghezza desiderata per schermi medium */
+    }
+}
+
+/* Media query per schermi large (oltre 992px) */
+@media (min-width: 936px) {
+    .carsim {
+        width: 70%; /* Larghezza desiderata per schermi large */
+    }
+}
+
+@media (min-width: 1100px) {
+    .carsim {
+        width: 60%; /* Larghezza desiderata per schermi large */
+    }
+}
+
+
+@media (min-width: 1800px) {
+    .carsim {
+        width: 50%; /* Larghezza desiderata per schermi large */
+    }
+}
+
+.fullscreen-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+
+.fullscreen-image {
+    max-width: 90%;
+    max-height: 90%;
+    cursor: pointer;
+}
+
+.fixed-image-size {
+    height: 150px; /* Imposta l'altezza desiderata per tutte le immagini */
+    object-fit: cover; /* Copre completamente l'elemento senza distorcere l'immagine */
+    width: 100%;
+}
+
+.card-img-container {
+    width: 100%; /* Imposta la larghezza desiderata per tutte le immagini */
+    height: 150px; /* Imposta l'altezza desiderata per tutte le immagini */
+    overflow: hidden; /* Nasconde eventuali porzioni aggiuntive dell'immagine oltre l'altezza specificata */
+}
+
+    .card-img-container img {
+        width: 100%; /* Rende l'immagine larga al 100% della sua contenitore, mantenendo l'aspetto */
+        height: auto; /* Per mantenere l'aspetto originale dell'immagine */
+        object-fit: cover; /* Copre completamente l'elemento senza distorcere l'immagine */
+    }
+
+    footer{
+
+        width:100vh !important;
+        
+    }
+
+body {
+   
+    margin: 0!important;
+    padding: 0;
+}
+
+.header {
+   
+    background-image: url('~Content/assets/img/backgroundhome.jpg') !important;
+    object-fit: cover !important;
+    background: center !important;
+    background: fixed !important;
+    color: white;
+    text-align: center;
+  
+}
+
+.intro {
+    text-align: center;
+    padding: 50px;
+}
+
+.featured-cars {
+    background-color: #f4f4f4;
+    padding: 50px;
+}
+
+.footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    max-width:100%;
+}
+
+
+
+/* Aggiunte regole CSS */
+.container-fluid .row {
+    margin-bottom: 20px;
+}
+
+@media (max-width: 768px) {
+    aside {
+        width: 100%;
+        margin-right: 0;
+        float: none;
+    }
+}
+
+aside {
+    width: 25%;
+    float: right;
+    padding: 0 ;
+    box-sizing: border-box;
+    justify-content:end
+}
+
+.card {
+    height: 100%;
+}
+
+.card-footer {
+    margin-top: 15px;
+}
+
+iframe {
+    width: 100%;
+    height: 300px;
+    border: 0;
+}

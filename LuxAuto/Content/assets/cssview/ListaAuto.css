@@ -1,0 +1,106 @@
+﻿body {
+   
+    margin: 0;
+    padding: 0;
+    background-color:white!important;
+    color:black !important;
+}
+
+   
+   *{
+       color:black;
+   }
+ 
+
+  
+
+
+
+.intro{
+    text-align: center;
+    padding: 50px;
+    
+}
+
+.featured-cars {
+    
+    
+}
+
+.footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+/Video/
+.container-fluid {
+    position: relative;
+    width: 100%;
+   
+    overflow: hidden;
+}
+
+
+/* Your existing styles here */
+
+/* Responsive styles for different screen sizes */
+@media only screen and (max-width: 768px) {
+    /* Adjust styles for smaller screens */
+    .header h1 {
+        font-size: 24px;
+    }
+
+    /* Add more responsive styles as needed */
+}
+
+/* Video container styling */
+.video-container {
+    position: relative;
+    width: 100%;
+    padding-top: 56.25%; /* Maintain 16:9 aspect ratio for the video */
+}
+
+    .video-container video {
+        position: absolute;
+        bottom: 12%;
+        left: auto;
+        right:auto;
+        width: 100%;
+        height: 100%;
+        opacity:0.7;
+    }
+
+
+/* Aggiungi questo stile per posizionare le immagini fianco a fianco */
+.image-container {
+    display: flex;
+    justify-content: space-between; /* Aggiunge spazio tra le immagini */
+    flex-wrap: wrap;
+}
+
+    /* Opzionalmente, puoi aggiungere stili per separare le immagini o regolare le dimensioni */
+    .image-container img {
+        margin-right: 10px; /* Spazio tra le immagini */
+        max-width: 100%; /* Assicura che le immagini non superino la larghezza del loro contenitore */
+        height: auto; /* Mantiene l'aspetto proporzionato delle immagini */
+    }
+
+.main-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+}
+
+/* Stili per il testo a sinistra */
+.text-content {
+    max-width: 600px; /* Larghezza massima del contenuto testuale */
+}
+.main-container{
+    max-width:80%;
+}
+h2{
+    font-size:2.3em;
+}

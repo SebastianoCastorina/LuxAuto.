@@ -1,0 +1,64 @@
+﻿@model LuxAuto.Models.Offerta
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>Offerta</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Asta.idAsta)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Asta.idAsta)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Autovettura.NomeModello)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Autovettura.NomeModello)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.User.Nome)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.User.Nome)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.OffertaFatta)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.OffertaFatta)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DataOfferta)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DataOfferta)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

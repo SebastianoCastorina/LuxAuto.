@@ -1,0 +1,71 @@
+﻿@model IEnumerable<LuxAuto.Models.Autovettura>
+
+<head>
+    <link href="~/Content/assets/css.css" rel="stylesheet" />
+    <style>
+        body {
+            background-image: url('/Content/assets/img/background2.jpg');
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+
+        aside {
+            width: 25%; /* Larghezza fissa del 25% del contenitore genitore */
+            float: right; /* Posizionamento a destra */
+            padding: 0 20px; /* Margini laterali di 20px */
+            box-sizing: border-box; /* Il padding è incluso nella larghezza totale */
+        }
+
+        .card {
+            height: 100%;
+        }
+
+        .card-footer {
+            margin-top: 15px; /* Margine superiore tra il testo e la mappa */
+        }
+
+        iframe {
+            width: 100%; /* Riempie completamente il contenitore */
+            height: 300px; /* Altezza desiderata per la mappa */
+            border: 0;
+        }
+    </style>
+</head>
+
+@{
+    ViewBag.Title = "ListaCarFiltrate";
+}
+
+    <div class="container-fluid  justify-content-evenly align-top">
+        <ul class="list-unstyled d-flex flex-row py-3 fw-bold fst-italic justify-content-evenly align-bottom">
+
+            <li class=""> <a href="https://localhost:44308/Marchio/Details/40" class="text-decoration-none text-black ">Aston Martin</a> </li>
+            <li class=" px-3"> <a href="https://localhost:44308/Marchio/Details/46" class="text-decoration-none text-black ">Alfa Romeo</a> </li>
+            <li class=""> <a href="https://localhost:44308/Marchio/Details/48 " class="text-decoration-none text-black ">Brabus</a> </li>
+            <li class="px-3"> <a href="https://localhost:44308/Marchio/Details/49" class="text-decoration-none text-black ">Bugatti</a> </li>
+            <li class=""> <a href="https://localhost:44308/Marchio/Details/62" class="text-decoration-none  text-black">BMW</a> </li>
+            <li class="px-3"><a href="https://localhost:44308/Marchio/Details/50" class="text-decoration-none  text-black">Ferrari</a> </li>
+            <li class=""> <a href="https://localhost:44308/Marchio/Details/51" class="text-decoration-none text-black ">Gumpert</a> </li>
+            <li class="px-3"> <a href="https://localhost:44308/Marchio/Details/52" class="text-decoration-none  text-black">Jaguar</a> </li>
+            <li class=""> <a href="https://localhost:44308/Marchio/Details/54" class="text-decoration-none text-black ">Lamborghini</a> </li>
+            <li class="px-3"> <a href="https://localhost:44308/Marchio/Details/55" class="text-decoration-none  text-black">Maserati</a> </li>
+            <li class=""> <a href="https://localhost:44308/Marchio/Details/57" class="text-decoration-none text-black ">Pagani</a> </li>
+            <li class="px-3"> <a href="https://localhost:44308/Marchio/Details/58" class="text-decoration-none text-black ">Porsche</a> </li>
+            <li class=""> <a href="https://localhost:44308/Marchio/Details/62" class="text-decoration-none text-black ">Bentley</a> </li>
+            <li class="px-3"> <a href="https://localhost:44308/Marchio/Details/65" class="text-decoration-none text-black ">McLaren</a> </li>
+            <li class=""> <a href="https://localhost:44308/Marchio/Details/66" class="text-decoration-none text-black ">Koenigsegg</a> </li>
+            <li class="px-3"> <a href="https://localhost:44308/Marchio/Details/60" class="text-decoration-none text-black ">Ford</a> </li>
+            <li class=""> <a href="https://localhost:44308/Marchio/Details/61" class="text-decoration-none text-black ">Audi</a> </li>
+            <li class="px-3"> <a href="https://localhost:44308/Marchio/Details/59" class="text-decoration-none text-black ">Rolls-Royce</a> </li>
+        </ul>
+    </div>
+    <div class="container-fluid  mt-5 pt-5 text-start text-black ">
+        <form action="/Autovettura/FilterByMarchio" method="post">
+            <label class="text-black text-start ms" for="selectedMarchio">Cerca Auto:</label>
+            @Html.DropDownList("selectedMarchio", ViewData["selectedMarchio"] as SelectList, "Seleziona un marchio", new { @class = "form-control text-start" })
+            <input type="submit" value="Cerca" class="btn btn-primary mt-2 justify-content-start ">
+        </form>
+
+
+    </div>
+

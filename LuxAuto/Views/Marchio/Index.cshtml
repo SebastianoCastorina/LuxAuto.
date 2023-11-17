@@ -1,0 +1,41 @@
+﻿@model IEnumerable<LuxAuto.Models.Marchio>
+
+
+
+@{
+    ViewBag.Title = "Index";
+}
+
+@Styles.Render("~/Content/Site.css")
+@if (User.IsInRole("Admin"))
+{
+    @Html.ActionLink("Aggiungi Marchio", "Create", "Marchio", FormMethod.Post, new { @enctype = "multipart/form-data", @class = " btn btn-success text-center mw-10 justify-content-between align-items-center mt-5 " })
+}
+    <div class="row row-cols-lg-3 row-cols-md-2 row-cols-sm-1 g-4">
+        @foreach (var item in Model)
+        {
+            <div class="col">
+                <div class="card bg-white text-white" style="max-height:450px; min-height:450px; max-width:400px; min-width:400px; margin:auto;">
+                    <a href="@Url.Action("Details", "Marchio", new { id = item.idMarchio })" class="full-card-link">
+                        <img src="~/Content/assets/img/LoghiMarchi/@item.Logo" class="card-img-top fixed-image-size img-fluid" alt="logomarchio" style="max-height:260px; min-height:260px; object-fit:contain">
+
+                    </a>                <div class="card-body bg-dark">
+                        <h5 class="card-title text-center fs-4">@Html.DisplayFor(modelItem => item.NomeMarchio)</h5>
+
+                    </div>
+                    <div class="card-footer bg-dark d-flex justify-content-between">
+                        @if (User.IsInRole("Admin"))
+                        {
+                            <div class="btn-group align-items-center" role="group" aria-label="Basic mixed styles example">
+                                @Html.ActionLink("Modifica", "Edit", new { id = item.idMarchio }, new { @class = "btn btn-primary m-2" })
+                                @Html.ActionLink("Storia del Marchio", "Details", new { id = item.idMarchio }, new { @class = "btn btn-primary m-2" })
+                                @Html.ActionLink("Elimina", "Delete", new { id = item.idMarchio }, new { @class = "btn btn-primary m-2" })
+                            </div>
+                        }
+
+
+                    </div>
+                </div>
+            </div>
+        }
+    </div>

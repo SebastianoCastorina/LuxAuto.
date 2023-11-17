@@ -1,0 +1,122 @@
+﻿@model LuxAuto.Models.Autovettura
+
+@{
+    ViewBag.Title = "Details";
+}
+<head>
+
+    @Styles.Render("~/Content/Site.css")
+    <title>Dettagli dell'auto</title>
+
+
+
+</head>
+
+<h4> @Html.DisplayFor(model => model.Marchio.NomeMarchio)</h4>
+<h2> @Html.DisplayFor(model => model.NomeModello)</h2>
+<hr />
+<div class="container-fluid">
+    <div id="carousel-@Model.idAuto" class=" carousel slide" data-interval="false">
+
+        <div class="carousel-inner  ">
+            @for (int i = 0; i < 7; i++)
+            {
+                <div class="carousel-item  @(i == 0 ? "active" : "")">
+                    <img src="~/Content/assets/img/@Model.CaroselloImages[i]" class=" carsim d-block m-auto" alt="Image @(i + 1)" >
+                </div>
+            }
+        </div>
+        <a class="carousel-control-prev" href="#carousel-@Model.idAuto" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#carousel-@Model.idAuto" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </a>
+    </div>
+</div>
+
+
+<div class="auto-info">
+  
+    <hr />
+
+
+
+
+
+    <div class="container-fluid w-100">
+        <div class="row">
+            <div class="col-12 col-md-2 col-lg-2 ">
+                <dl class="dl-horizontal">
+                    <dt>Chilometraggio</dt>
+                    <dd>@Html.DisplayFor(model => model.Chilometraggio)</dd>
+                    <dt>Colore</dt>
+                    <dd>@Html.DisplayFor(model => model.Colore)</dd>
+                    <dt>Città</dt>
+                    <dd>@Html.DisplayFor(model => model.Città)</dd>
+                    <dt>Anno</dt>
+                    <dd>@Html.DisplayFor(model => model.AnnoImmatricolazione)</dd>
+                    
+                    @if (User.IsInRole("Admin"))
+                    {
+                        <dt>E' all'asta?</dt>
+                        <dd>@Html.DisplayFor(model => model.HasAsta)</dd>
+                        <dt>Ha il marchio epoca?</dt>
+                        <dd>@Html.DisplayFor(model => model.HasEpoca)</dd>
+                    }
+                </dl>
+            </div>
+            <div class="col-12 col-md-2 col-lg-2">
+                <dl class="dl-horizontal">
+                    <dt>Carburante</dt>
+                    <dd>@Html.DisplayFor(model => model.Carburante)</dd>
+                    <dd>@Html.DisplayFor(model => model.Potenza)</dd>
+                </dl>
+            </div>
+            
+            <div class="col-12 col-md-4 col-lg-4">
+                <dl class="dl-horizontal">
+                    <dt>Dati Base</dt>
+                    <dd>@Html.DisplayFor(model => model.DatiBase)</dd>
+                    <dt>Specifiche Tecniche</dt>
+                    <dd>@Html.DisplayFor(model => model.SpecificheTecniche)</dd>
+                </dl>
+            </div>
+            <div class="col-12 col-md-2 col-lg-3">
+                <dl class="dl-horizontal">
+                    <dt>Lista Optional:</dt>
+                    @foreach (var i in Model.OptionalAuto)
+                    {
+                        <dd>@i.Optional.NomeOptional</dd>
+                    }
+                </dl>
+            </div>
+            <div class="col-12 col-md-2 col-lg-1">
+                <dl class="dl-horizontal">
+                    
+                    <dt>Prezzo</dt>
+                    <dd>€@Html.DisplayFor(model => model.Prezzo)</dd>
+
+                </dl>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+@if (User.IsInRole("Admin"))
+{
+    <p>
+        @Html.ActionLink("Modifica", "Edit", new { id = Model.idAuto }) |
+        @Html.ActionLink("Torna alla lista", "Index")
+    </p>
+}
+else
+{
+    <p>
+        @Html.ActionLink("Torna alla lista", "Index")
+    </p>
+}

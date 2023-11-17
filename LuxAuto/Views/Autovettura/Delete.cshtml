@@ -1,0 +1,190 @@
+﻿@model LuxAuto.Models.Autovettura
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>Autovettura</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Marchio.NomeMarchio)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Marchio.NomeMarchio)
+        </dd>
+
+
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NomeModello)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NomeModello)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Foto)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Foto)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Foto1)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Foto1)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Foto2)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Foto2)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Foto3)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Foto3)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Foto4)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Foto4)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Foto5)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Foto5)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Foto6)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Foto6)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DatiBase)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DatiBase)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Colore)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Colore)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Chilometraggio)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Chilometraggio)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AnnoImmatricolazione)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AnnoImmatricolazione)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Potenza)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Potenza)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Città)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Città)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Carburante)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Carburante)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Prezzo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Prezzo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SpecificheTecniche)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SpecificheTecniche)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.HasAsta)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.HasAsta)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.HasEpoca)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.HasEpoca)
+        </dd>
+
+    <dd>
+        @Html.DisplayFor(model=> model.HasVenduta)
+    </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

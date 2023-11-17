@@ -1,0 +1,26 @@
+﻿@model LuxAuto.Models.Optional
+<link href="~/Content/Site.css" rel="stylesheet" />
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Optional</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.NomeOptional)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NomeOptional)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.idOptional }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

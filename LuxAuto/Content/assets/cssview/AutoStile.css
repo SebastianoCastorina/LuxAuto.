@@ -1,0 +1,42 @@
+﻿body {
+   
+}
+
+
+
+.body-content {
+    margin: 0;
+    min-width: 100% !important;
+}
+
+#Cont {
+    min-width: 100%;
+    display: flex;
+    flex-direction: column;
+  
+}
+
+.img-responsive {
+    display: flex;
+    flex-wrap: wrap;
+ 
+    
+    min-height: auto;
+    margin-top: 3rem;
+margin:auto;
+}
+
+#card-auto {
+    display: flex;
+    flex-wrap: wrap;
+   
+   
+   
+}
+
+
+
+
+
+
+

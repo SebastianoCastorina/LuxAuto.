@@ -21,6 +21,7 @@ namespace LuxAuto.Models
         public virtual DbSet<OptionalAuto> OptionalAuto { get; set; }
         public virtual DbSet<User> User { get; set; }
 
+
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             modelBuilder.Entity<Autovettura>()

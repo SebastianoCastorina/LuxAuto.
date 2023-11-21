@@ -43,6 +43,7 @@ body {
     display: flex;
     flex-wrap: wrap;
     color: white !important;
+    font-weight:300;
   
 }
 

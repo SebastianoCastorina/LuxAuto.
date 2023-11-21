@@ -2,17 +2,24 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.Remoting.Messaging;
 using System.Web;
 using System.Web.Mvc;
 using System.Web.Security;
+using System.Web.UI.WebControls;
 
 namespace LuxAuto.Controllers
 {
     public class AuthController : Controller
     {
         private ModelDBContext db = new ModelDBContext();
-        // GET: Auth
-        public ActionResult Login()
+
+
+   
+
+
+    // GET: Auth
+    public ActionResult Login()
         {
             return View();
         }

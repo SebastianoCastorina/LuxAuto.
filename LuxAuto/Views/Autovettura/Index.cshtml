@@ -56,7 +56,7 @@
                             <h5 class="card-title mb-4">@Html.DisplayFor(modelItem => item.Marchio.NomeMarchio)</h5>
                             <div id="carousel-@item.idAuto" class="carousel slide">
 
-                                <!-- Indicators --><div class=" container-fluid mx-auto">
+                              <div class=" container-fluid mx-auto">
                                     <ol class="carousel-indicators mx-auto">
                                         <li data-bs-target="#carousel-@item.idAuto" data-bs-slide-to="0" class="d-block carousel-slide carousel-image mx-auto active" alt="Image 1"></li>
                                         <li data-bs-target="#carousel-@item.idAuto" data-bs-slide-to="1" class="d-block carousel-slide carousel-image mx-auto" alt="Image 2"></li>
@@ -66,9 +66,9 @@
                                         <li data-bs-target="#carousel-@item.idAuto" data-bs-slide-to="5" class="d-block  carousel-slide carousel-image mx-auto" alt="Image 6"></li>
                                         <li data-bs-target="#carousel-@item.idAuto" data-bs-slide-to="6" class="d-block  carousel-slide carousel-image mx-auto" alt="Image 7"></li>
                                       
-                                        <!-- Add more indicators for additional images -->
+                                      
                                     </ol>
-                                    <!-- Slides -->
+                              
                                     <div class="carousel-inner ">
                                         <div class="carousel-item active">
                                             <a href="~/Content/assets/img/@item.Foto" class="carousel-link text-decoration-none text-black" onclick="openFullScreen('@item.Foto')">
@@ -79,6 +79,7 @@
                                         <div class="carousel-item ">
                                             <a href="~/Content/assets/img/@item.Foto1" class="carousel-link text-decoration-none text-black" onclick="openFullScreen('@item.Foto1')">
                                                 <img src="~/Content/assets/img/@item.Foto1" class="d-block img-fluid  mx-auto" alt="Image 2" style="width:90% !important; max-height:45% !important; min-height:45% !important; object-fit: contain; margin: auto;">
+                                                </a>
                                         </div>
                                         <div class="carousel-item">
                                             <a href="~/Content/assets/img/@item.Foto2" class="carousel-link text-decoration-none text-black" onclick="openFullScreen('@item.Foto2')">
@@ -104,10 +105,10 @@
                                             <a href="~/Content/assets/img/@item.Foto6" class="carousel-link text-decoration-none text-black" onclick="openFullScreen('@item.Foto6')">
                                                 <img src="~/Content/assets/img/@item.Foto6" class="d-block img-fluid mx-auto" alt="Image 7" style="width:90% !important; max-height:45% !important; min-height:45% !important; object-fit: contain; margin: auto;">
                                             </a>
-                                                </div>
-                                        <!-- Add more carousel items for additional images -->
+                                         </div>
+                                      
                                     </div>
-                                    <!-- Controls -->
+                                   
                                     <a class="carousel-control-prev mx-auto" href="#carousel-@item.idAuto" role="button" data-bs-slide="prev">
                                         <span class="carousel-control-prev-icon mx-auto" aria-hidden="true"></span>
                                         <span class="visually-hidden">Previous</span>
@@ -143,8 +144,8 @@
                                                 <li class="fw-bold fs-5"><i class="me-2 far fa-calendar-alt  fa-xs" style="color: #ffffff;"></i>@Html.DisplayNameFor(model => model.AnnoImmatricolazione):<br /><span class="fs-6 fw-normal"> @Html.DisplayFor(modelItem => item.AnnoImmatricolazione)</span></li>
                                                 <li class="fw-bold fs-5"><i class="me-2 fas fa-palette  fa-xs" style="color: #ffffff;"></i>@Html.DisplayNameFor(model => model.Colore):<br /><span class="fs-6 fw-normal"> @Html.DisplayFor(modelItem => item.Colore)</span></li>
                                                 <li class="fw-bold fs-5"><i class="me-2 fas fa-gas-pump  fa-xs" style="color: #ffffff;"></i>@Html.DisplayNameFor(model => model.Carburante): <br /><span class="fs-6 fw-normal">@Html.DisplayFor(modelItem => item.Carburante)</span></li>
-                                                <li class="fw-bold fs-5"><i class="me-2 fa-solid fa-file-circle-plus  fa-xs" style="color: #ffffff;"></i>@Html.DisplayNameFor(model => model.SpecificheTecniche):<br /><span class="fs-6 fw-normal"> @Html.DisplayFor(modelItem => item.SpecificheTecniche)</span></li>
-                                                <li class="fw-bold fs-5"><i class="fa-solid fa-euro-sign fa-xs" style="color: #ffffff;"></i>@Html.DisplayNameFor(model => model.Prezzo):<br /> <span class="fs-6 fw-normal">€ @Html.DisplayFor(modelItem => item.Prezzo)</span></li>
+                                                <li class="fw-bold fs-5">@Html.DisplayNameFor(model => model.SpecificheTecniche):<br /><span class="fs-6 fw-normal"> @Html.DisplayFor(modelItem => item.SpecificheTecniche)</span></li>
+                                                <li class="fw-bold fs-5">@Html.DisplayNameFor(model => model.Prezzo):<br /> <span class="fs-6 fw-normal">€ @Html.DisplayFor(modelItem => item.Prezzo)</span></li>
                                                 @if (item.HasVenduta == true)
                                                 {
                                                     <li class="fw-bold fs-5">@Html.DisplayNameFor(model => model.HasVenduta):  @Html.DisplayTextFor(modelItem => item.HasVenduta)</li>
@@ -184,7 +185,7 @@
                             <h5 class="card-title mb-4">@Html.DisplayFor(modelItem => item.Marchio.NomeMarchio)</h5>
                             <div id="carousel-@item.idAuto" class="carousel slide">
 
-                                <!-- Indicators --><div class=" container-fluid mx-auto">
+                                <div class=" container-fluid mx-auto">
                                     <ol class="carousel-indicators mx-auto">
                                         <li data-bs-target="#carousel-@item.idAuto" data-bs-slide-to="0" class="d-block carousel-slide carousel-image mx-auto active" alt="Image 1"></li>
                                         <li data-bs-target="#carousel-@item.idAuto" data-bs-slide-to="1" class="d-block carousel-slide carousel-image mx-auto" alt="Image 2"></li>
@@ -194,34 +195,49 @@
                                         <li data-bs-target="#carousel-@item.idAuto" data-bs-slide-to="5" class="d-block  carousel-slide carousel-image mx-auto" alt="Image 6"></li>
                                         <li data-bs-target="#carousel-@item.idAuto" data-bs-slide-to="6" class="d-block  carousel-slide carousel-image mx-auto" alt="Image 7"></li>
 
-                                        <!-- Add more indicators for additional images -->
+
                                     </ol>
-                                    <!-- Slides -->
+
                                     <div class="carousel-inner ">
                                         <div class="carousel-item active">
-                                            <img src="~/Content/assets/img/@item.Foto" class="d-block img-fluid mx-auto " alt="Image 1" style="width:90% !important; max-height:45% !important; min-height:45% !important; object-fit: contain; margin: auto;">
+                                            <a href="~/Content/assets/img/@item.Foto" class="carousel-link text-decoration-none text-black" onclick="openFullScreen('@item.Foto')">
+
+                                                <img src="~/Content/assets/img/@item.Foto" class="d-block img-fluid mx-auto " alt="Image 1" style="width:90% !important; max-height:45% !important; min-height:45% !important; object-fit: contain; margin: auto;">
+                                            </a>
+                                        </div>
+                                        <div class="carousel-item ">
+                                            <a href="~/Content/assets/img/@item.Foto1" class="carousel-link text-decoration-none text-black" onclick="openFullScreen('@item.Foto1')">
+                                                <img src="~/Content/assets/img/@item.Foto1" class="d-block img-fluid  mx-auto" alt="Image 2" style="width:90% !important; max-height:45% !important; min-height:45% !important; object-fit: contain; margin: auto;">
+                                            </a>
                                         </div>
                                         <div class="carousel-item">
-                                            <img src="~/Content/assets/img/@item.Foto1" class="d-block img-fluid  mx-auto" alt="Image 2" style="width:90% !important; max-height:45% !important; min-height:45% !important; object-fit: contain; margin: auto;">
+                                            <a href="~/Content/assets/img/@item.Foto2" class="carousel-link text-decoration-none text-black" onclick="openFullScreen('@item.Foto2')">
+                                                <img src="~/Content/assets/img/@item.Foto2" class="d-block  img-fluid mx-auto" alt="Image 3" style="width:90% !important; max-height:45% !important; min-height:45% !important; object-fit: contain; margin: auto;">
+                                            </a>
                                         </div>
                                         <div class="carousel-item">
-                                            <img src="~/Content/assets/img/@item.Foto2" class="d-block  img-fluid mx-auto" alt="Image 3" style="width:90% !important; max-height:45% !important; min-height:45% !important; object-fit: contain; margin: auto;">
+                                            <a href="~/Content/assets/img/@item.Foto3" class="carousel-link text-decoration-none text-black" onclick="openFullScreen('@item.Foto3')">
+                                                <img src="~/Content/assets/img/@item.Foto3" class="d-block img-fluid mx-auto" alt="Image 4" style="width:90% !important; max-height:45% !important; min-height:45% !important; object-fit: contain; margin: auto;">
+                                            </a>
                                         </div>
                                         <div class="carousel-item">
-                                            <img src="~/Content/assets/img/@item.Foto3" class="d-block img-fluid mx-auto" alt="Image 4" style="width:90% !important; max-height:45% !important; min-height:45% !important; object-fit: contain; margin: auto;">
+                                            <a href="~/Content/assets/img/@item.Foto4" class="carousel-link text-decoration-none text-black" onclick="openFullScreen('@item.Foto4')">
+                                                <img src="~/Content/assets/img/@item.Foto4" class="d-block img-fluid mx-auto" alt="Image 5" style="width:90% !important; max-height:45% !important; min-height:45% !important; object-fit: contain; margin: auto;">
+                                            </a>
                                         </div>
                                         <div class="carousel-item">
-                                            <img src="~/Content/assets/img/@item.Foto4" class="d-block img-fluid mx-auto" alt="Image 5" style="width:90% !important; max-height:45% !important; min-height:45% !important; object-fit: contain; margin: auto;">
+                                            <a href="~/Content/assets/img/@item.Foto5" class="carousel-link text-decoration-none text-black" onclick="openFullScreen('@item.Foto5')">
+                                                <img src="~/Content/assets/img/@item.Foto5" class="d-block img-fluid mx-auto" alt="Image 6" style="width:90% !important; max-height:45% !important; min-height:45% !important; object-fit: contain; margin: auto;">
+                                            </a>
                                         </div>
                                         <div class="carousel-item">
-                                            <img src="~/Content/assets/img/@item.Foto5" class="d-block img-fluid mx-auto" alt="Image 6" style="width:90% !important; max-height:45% !important; min-height:45% !important; object-fit: contain; margin: auto;">
+                                            <a href="~/Content/assets/img/@item.Foto6" class="carousel-link text-decoration-none text-black" onclick="openFullScreen('@item.Foto6')">
+                                                <img src="~/Content/assets/img/@item.Foto6" class="d-block img-fluid mx-auto" alt="Image 7" style="width:90% !important; max-height:45% !important; min-height:45% !important; object-fit: contain; margin: auto;">
+                                            </a>
                                         </div>
-                                        <div class="carousel-item">
-                                            <img src="~/Content/assets/img/@item.Foto6" class="d-block img-fluid mx-auto" alt="Image 7" style="width:90% !important; max-height:45% !important; min-height:45% !important; object-fit: contain; margin: auto;">
-                                        </div>
-                                        <!-- Add more carousel items for additional images -->
+
                                     </div>
-                                    <!-- Controls -->
+
                                     <a class="carousel-control-prev mx-auto" href="#carousel-@item.idAuto" role="button" data-bs-slide="prev">
                                         <span class="carousel-control-prev-icon mx-auto" aria-hidden="true"></span>
                                         <span class="visually-hidden">Previous</span>
@@ -257,11 +273,12 @@
                                                 <li class="fw-bold fs-5"><i class="me-2 far fa-calendar-alt  fa-xs" style="color: #ffffff;"></i>@Html.DisplayNameFor(model => model.AnnoImmatricolazione):<br /><span class="fs-6 fw-normal"> @Html.DisplayFor(modelItem => item.AnnoImmatricolazione)</span></li>
                                                 <li class="fw-bold fs-5"><i class="me-2 fas fa-palette  fa-xs" style="color: #ffffff;"></i>@Html.DisplayNameFor(model => model.Colore):<br /><span class="fs-6 fw-normal"> @Html.DisplayFor(modelItem => item.Colore)</span></li>
                                                 <li class="fw-bold fs-5"><i class="me-2 fas fa-gas-pump  fa-xs" style="color: #ffffff;"></i>@Html.DisplayNameFor(model => model.Carburante): <br /><span class="fs-6 fw-normal">@Html.DisplayFor(modelItem => item.Carburante)</span></li>
-                                                <li class="fw-bold fs-5"><i class="me-2 fa-solid fa-file-circle-plus  fa-xs" style="color: #ffffff;"></i>@Html.DisplayNameFor(model => model.SpecificheTecniche):<br /><span class="fs-6 fw-normal"> @Html.DisplayFor(modelItem => item.SpecificheTecniche)</span></li>
-                                                <li class="fw-bold fs-5"><i class="fa-solid fa-euro-sign fa-xs" style="color: #ffffff;"></i>@Html.DisplayNameFor(model => model.Prezzo):<br /> <span class="fs-6 fw-normal">€ @Html.DisplayFor(modelItem => item.Prezzo)</span></li>
+                                                <li class="fw-bold fs-5">@Html.DisplayNameFor(model => model.SpecificheTecniche):<br /><span class="fs-6 fw-normal"> @Html.DisplayFor(modelItem => item.SpecificheTecniche)</span></li>
+                                                <li class="fw-bold fs-5">@Html.DisplayNameFor(model => model.Prezzo):<br /> <span class="fs-6 fw-normal">€ @Html.DisplayFor(modelItem => item.Prezzo)</span></li>
                                             </ul>
 
                                             @Html.ActionLink("Dettagli", "Details", new { id = item.idAuto }, new { @class = "btn btn-primary m-2" })
+                                            @Html.ActionLink("Contatta Venditore", "Create","ListaClienti", new { id = item.idAuto }, new { @class = "btn btn-primary m-2" })
 
                                         </div>
                                     </div>

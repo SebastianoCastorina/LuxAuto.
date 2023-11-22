@@ -1,5 +1,5 @@
 ﻿@model IEnumerable<LuxAuto.Models.Autovettura>
-
+<html>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,7 +11,7 @@
             background-repeat: no-repeat;
             display: flex;
             flex-direction: column;
-            align-items: center; /* Centra i contenuti verticalmente */
+            align-items: center; 
         }
 
         .container {
@@ -19,13 +19,13 @@
             justify-content: center;
             align-items: flex-start;
             width: 100%;
-            max-width: 1200px; /* Larghezza massima della pagina */
-            margin: 0 auto; /* Centra la pagina orizzontalmente */
+            max-width: 1200px; 
+            margin: 0 auto; 
         }
 
         .video-container {
             flex-basis: 50%;
-            margin-right: 20px; /* Aggiungi spaziatura tra video e colonne di marchi */
+            margin-right: 20px; 
         }
 
             .video-container video {
@@ -56,7 +56,10 @@
             .marchi-list-item a {
                 text-decoration: none;
                 color: black;
+
             }
+
+     
     </style>
 </head>
 
@@ -64,43 +67,51 @@
     ViewBag.Title = "ListaCarFiltrate";
 }
 <body>
+
+    
     <div class="container">
         <div class="video-container">
             <video autoplay muted playsinline loop>
                 <source src="~/Content/assets/video/carfiltratevideo.mp4" type="video/mp4" />
             </video>
         </div>
+     
 
-        <div class="marchi-container">
-            <ul class="marchi-list">
-                <li class="marchi-list-item"><a href="https://localhost:44308/Marchio/Details/40">Aston Martin</a></li>
-                <li class="marchi-list-item"><a href="https://localhost:44308/Marchio/Details/46">Alfa Romeo</a></li>
-                <li class="marchi-list-item"><a href="https://localhost:44308/Marchio/Details/48">Brabus</a></li>
-                <li class="marchi-list-item"><a href="https://localhost:44308/Marchio/Details/49">Bugatti</a></li>
-                <li class="marchi-list-item"><a href="https://localhost:44308/Marchio/Details/62">BMW</a></li>
-                <li class="marchi-list-item"><a href="https://localhost:44308/Marchio/Details/50">Ferrari</a></li>
-                <li class="marchi-list-item"><a href="https://localhost:44308/Marchio/Details/51">Gumpert</a></li>
-                <li class="marchi-list-item"><a href="https://localhost:44308/Marchio/Details/52">Jaguar</a></li>
-                <li class="marchi-list-item"><a href="https://localhost:44308/Marchio/Details/54">Lamborghini</a></li>
-                <li class="marchi-list-item"><a href="https://localhost:44308/Marchio/Details/55">Maserati</a></li>
-                <li class="marchi-list-item"><a href="https://localhost:44308/Marchio/Details/57">Pagani</a></li>
-                <li class="marchi-list-item"><a href="https://localhost:44308/Marchio/Details/58">Porsche</a></li>
-                <li class="marchi-list-item"><a href="https://localhost:44308/Marchio/Details/62">Bentley</a></li>
-                <li class="marchi-list-item"><a href="https://localhost:44308/Marchio/Details/65">McLaren</a></li>
-                <li class="marchi-list-item"><a href="https://localhost:44308/Marchio/Details/66">Koenigsegg</a></li>
-                <li class="marchi-list-item"><a href="https://localhost:44308/Marchio/Details/60">Ford</a></li>
-                <li class="marchi-list-item"><a href="https://localhost:44308/Marchio/Details/61">Audi</a></li>
-                <li class="marchi-list-item"><a href="https://localhost:44308/Marchio/Details/59">Rolls-Royce</a></li>
-                <!-- Aggiungi gli altri marchi qui -->
-            </ul>
+         
+                <div class="marchi-container">
+                    <ul class="marchi-list">
+                        <li class="marchi-list-item"><a href="https://localhost:44308/Marchio/Details/40">Aston Martin </a></li>
+                        <li class="marchi-list-item"><a href="https://localhost:44308/Marchio/Details/46">Alfa Romeo</a></li>
+                        <li class="marchi-list-item"><a href="https://localhost:44308/Marchio/Details/48">Brabus</a></li>
+                        <li class="marchi-list-item"><a href="https://localhost:44308/Marchio/Details/49">Bugatti</a></li>
+                        <li class="marchi-list-item"><a href="https://localhost:44308/Marchio/Details/62">BMW</a></li>
+                        <li class="marchi-list-item"><a href="https://localhost:44308/Marchio/Details/50">Ferrari</a></li>
+                        <li class="marchi-list-item"><a href="https://localhost:44308/Marchio/Details/51">Gumpert</a></li>
+                        <li class="marchi-list-item"><a href="https://localhost:44308/Marchio/Details/52">Jaguar</a></li>
+                        <li class="marchi-list-item"><a href="https://localhost:44308/Marchio/Details/54">Lamborghini</a></li>
+                        <li class="marchi-list-item"><a href="https://localhost:44308/Marchio/Details/55">Maserati</a></li>
+                        <li class="marchi-list-item"><a href="https://localhost:44308/Marchio/Details/57">Pagani</a></li>
+                        <li class="marchi-list-item"><a href="https://localhost:44308/Marchio/Details/58">Porsche</a></li>
+                        <li class="marchi-list-item"><a href="https://localhost:44308/Marchio/Details/62">Bentley</a></li>
+                        <li class="marchi-list-item"><a href="https://localhost:44308/Marchio/Details/65">McLaren</a></li>
+                        <li class="marchi-list-item"><a href="https://localhost:44308/Marchio/Details/66">Koenigsegg</a></li>
+                        <li class="marchi-list-item"><a href="https://localhost:44308/Marchio/Details/60">Ford</a></li>
+                        <li class="marchi-list-item"><a href="https://localhost:44308/Marchio/Details/61">Audi</a></li>
+                        <li class="marchi-list-item"><a href="https://localhost:44308/Marchio/Details/59">Rolls-Royce</a></li>
+                       
+                    </ul>
+                </div>
+            
         </div>
-    </div>
 
-    <div class="container-fluid mt-5 pt-5 text-start text-black">
+      
+    <div class="container-fluid mt-5 pt-5 text-center text-black">
         <form action="/Autovettura/FilterByMarchio" method="post">
-            <label class="text-black text-start ms" for="selectedMarchio">Cerca Auto:</label>
-            @Html.DropDownList("selectedMarchio", ViewData["selectedMarchio"] as SelectList, "Seleziona un marchio", new { @class = "form-control text-start" })
-            <input type="submit" value="Cerca" class="btn btn-primary mt-2 justify-content-start">
+            <label class="text-black fw-bold fc fs-4 text-center ms" for="selectedMarchio">REALIZZA IL TUO SOGNO</label>
+            <div class="d-flex justify-content-center">
+            @Html.DropDownList("selectedMarchio", ViewData["selectedMarchio"] as SelectList, "Seleziona un marchio", new { @class = "form-control text-center" })
+                </div>
+            <input type="submit" value="Cerca" class="btn btn-primary mt-2 justify-content-center">
         </form>
     </div>
 </body>

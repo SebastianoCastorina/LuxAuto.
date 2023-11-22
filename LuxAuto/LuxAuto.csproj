@@ -133,6 +133,7 @@
     <Compile Include="Controllers\AuthController.cs" />
     <Compile Include="Controllers\AutovetturaController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\ListaClientiController.cs" />
     <Compile Include="Controllers\MarchioController.cs" />
     <Compile Include="Controllers\OffertaController.cs" />
     <Compile Include="Controllers\OptionalAutoController.cs" />
@@ -193,9 +194,26 @@
     <Compile Include="Migrations\202311141709263_AggLogoMarchio.designer.cs">
       <DependentUpon>202311141709263_AggLogoMarchio.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202311210034204_ListaClientiAdd.cs" />
+    <Compile Include="Migrations\202311210034204_ListaClientiAdd.designer.cs">
+      <DependentUpon>202311210034204_ListaClientiAdd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202311210037544_ListaClientifull.cs" />
+    <Compile Include="Migrations\202311210037544_ListaClientifull.designer.cs">
+      <DependentUpon>202311210037544_ListaClientifull.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202311210038585_ListaClientifull2.cs" />
+    <Compile Include="Migrations\202311210038585_ListaClientifull2.designer.cs">
+      <DependentUpon>202311210038585_ListaClientifull2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202311210107079_Textarea.cs" />
+    <Compile Include="Migrations\202311210107079_Textarea.designer.cs">
+      <DependentUpon>202311210107079_Textarea.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Asta.cs" />
     <Compile Include="Models\Autovettura.cs" />
+    <Compile Include="Models\ListaClienti.cs" />
     <Compile Include="Models\Marchio.cs" />
     <Compile Include="Models\ModelDBContext.cs" />
     <Compile Include="Models\Offerta.cs" />
@@ -387,6 +405,11 @@
     <Content Include="Views\Asta\Details.cshtml" />
     <Content Include="Views\Asta\Edit.cshtml" />
     <Content Include="Views\Asta\Index.cshtml" />
+    <Content Include="Views\ListaClienti\Create.cshtml" />
+    <Content Include="Views\ListaClienti\Delete.cshtml" />
+    <Content Include="Views\ListaClienti\Details.cshtml" />
+    <Content Include="Views\ListaClienti\Edit.cshtml" />
+    <Content Include="Views\ListaClienti\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -469,6 +492,18 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202311141709263_AggLogoMarchio.resx">
       <DependentUpon>202311141709263_AggLogoMarchio.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202311210034204_ListaClientiAdd.resx">
+      <DependentUpon>202311210034204_ListaClientiAdd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202311210037544_ListaClientifull.resx">
+      <DependentUpon>202311210037544_ListaClientifull.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202311210038585_ListaClientifull2.resx">
+      <DependentUpon>202311210038585_ListaClientifull2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202311210107079_Textarea.resx">
+      <DependentUpon>202311210107079_Textarea.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
